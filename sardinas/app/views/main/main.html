@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+
+      function initialize() {
+
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(14.661178, 121.070263),
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+
+        }
+         map = new google.maps.Map(mapCanvas, mapOptions);
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+            initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(initialLocation);
+        });
+    }
+         var train=[];
+         train[train.length]={station:"MRT-3",sname:"North Edsa",traffic:"Light",pos: new google.maps.LatLng(14.655906,121.028989)};
+         train[train.length]={station:"MRT-3",sname:"Quezon Ave.",traffic:"Light",pos: new google.maps.LatLng(14.628120,121.064575)};
+         train[train.length]={station:"MRT-3",sname:"Kamuning",traffic:"Light",pos: new google.maps.LatLng(14.655906,121.028989)};
+         train[train.length]={station:"MRT-3",sname:"Araneta Center Cubao",traffic:"Heavy",pos: new google.maps.LatLng(14.619732,121.051014)};
+         train[train.length]={station:"MRT-3",sname:"Santolan",traffic:"Light",pos: new google.maps.LatLng(14.607606,121.056679)};
+         train[train.length]={station:"MRT-3",sname:"Ortigas",traffic:"Light",pos: new google.maps.LatLng(14.588004,121.056670)};
+         train[train.length]={station:"MRT-3",sname:"Shaw",traffic:"Light",pos: new google.maps.LatLng(14.581026,121.053503)};
+         train[train.length]={station:"MRT-3",sname:"Boni",traffic:"Light",pos: new google.maps.LatLng(14.573384,121.048267)};
+         train[train.length]={station:"MRT-3",sname:"Guadalupe",traffic:"Light",pos: new google.maps.LatLng(14.566988,121.045521)};
+         train[train.length]={station:"MRT-3",sname:"Buendia",traffic:"Light",pos: new google.maps.LatLng(14.554776,121.034792)};
+         train[train.length]={station:"MRT-3",sname:"Ayala",traffic:"Light",pos: new google.maps.LatLng(14.548711,121.034792)};
+         train[train.length]={station:"MRT-3",sname:"Magallanes",traffic:"Light",pos: new google.maps.LatLng(14.543228,121.020630)};
+         train[train.length]={station:"MRT-3",sname:"Taft",traffic:"Light",pos: new google.maps.LatLng(14.537578,121.001404)};
+
+         train[train.length]={station:"LRT-2",sname:"Santolan", traffic:"Medium",pos: new google.maps.LatLng(14.621642,121.085947)};
+         train[train.length]={station:"LRT-2",sname:"Katipunan", traffic:"Medium",pos: new google.maps.LatLng(14.631359,121.073416)};
+         train[train.length]={station:"LRT-2",sname:"Anonas", traffic:"Medium",pos: new google.maps.LatLng(14.628120,121.064575)};
+         train[train.length]={station:"LRT-2",sname:"Cubao", traffic:"Medium",pos: new google.maps.LatLng(14.623403,121.052556)};
+         train[train.length]={station:"LRT-2",sname:"Betty-Go Belmonte", traffic:"Medium",pos: new google.maps.LatLng(14.618634,121.042712)};
+         train[train.length]={station:"LRT-2",sname:"Gilmore", traffic:"Medium",pos: new google.maps.LatLng(14.613319,121.034172)};
+         train[train.length]={station:"LRT-2",sname:"J. Ruiz", traffic:"Medium",pos: new google.maps.LatLng(14.610661,121.025954)};
+         train[train.length]={station:"LRT-2",sname:"V. Mapa", traffic:"Medium",pos: new google.maps.LatLng(14.604100,121.017135)};
+         train[train.length]={station:"LRT-2",sname:"Pureza", traffic:"Medium",pos: new google.maps.LatLng(14.601649,121.005376)};
+         train[train.length]={station:"LRT-2",sname:"Legarda", traffic:"Medium",pos: new google.maps.LatLng(14.600902,121.992673)};
+         train[train.length]={station:"LRT-2",sname:"Recto", traffic:"Medium",pos: new google.maps.LatLng(14.603435,121.983532)};
+
+         train[train.length]={station:"LRT-1",sname:"North Ave",traffic:"Heavy",pos: new google.maps.LatLng(14.662014,120.999438)};
+         train[train.length]={station:"LRT-1",sname:"Roosevelt",traffic:"Heavy",pos: new google.maps.LatLng(14.657660,121.021271)};
+         train[train.length]={station:"LRT-1",sname:"Balintawak",traffic:"Heavy",pos: new google.maps.LatLng(14.657427,121.003748)};
+         train[train.length]={station:"LRT-1",sname:"Malvar",traffic:"Heavy",pos: new google.maps.LatLng(14.657369,120.993290)};
+         train[train.length]={station:"LRT-1",sname:"Monumento",traffic:"Heavy",pos: new google.maps.LatLng(14.654318,120.983891)};
+         train[train.length]={station:"LRT-1",sname:"5th Ave",traffic:"Heavy",pos: new google.maps.LatLng(14.644353,120.983570)};
+         train[train.length]={station:"LRT-1",sname:"R. Papa",traffic:"Heavy",pos: new google.maps.LatLng(14.635965,120.982368)};
+         train[train.length]={station:"LRT-1",sname:"Abad Santos",traffic:"Heavy",pos: new google.maps.LatLng(14.630588,120.981424)};
+         train[train.length]={station:"LRT-1",sname:"Blumentritt",traffic:"Heavy",pos: new google.maps.LatLng(14.622740,120.982926)};
+         train[train.length]={station:"LRT-1",sname:"Tayuman",traffic:"Heavy",pos: new google.maps.LatLng(14.616615,120.982668)};
+         train[train.length]={station:"LRT-1",sname:"Bambang",traffic:"Heavy",pos: new google.maps.LatLng(14.611133,120.982518)};
+         train[train.length]={station:"LRT-1",sname:"D. Jose",traffic:"Heavy",pos: new google.maps.LatLng(14.605236,120.982025)};
+         train[train.length]={station:"LRT-1",sname:"Carriedo",traffic:"Heavy",pos: new google.maps.LatLng(14.598966,120.981359)};
+         train[train.length]={station:"LRT-1",sname:"Central Terminal",traffic:"Heavy",pos: new google.maps.LatLng(14.592788,120.981660)};
+         train[train.length]={station:"LRT-1",sname:"U.N. Ave.",traffic:"Heavy",pos: new google.maps.LatLng(14.582519,120.983600)};
+         train[train.length]={station:"LRT-1",sname:"Pedro Gil",traffic:"Heavy",pos: new google.maps.LatLng(14.576114,120.988355)};
+         train[train.length]={station:"LRT-1",sname:"Quirino Ave.",traffic:"Heavy",pos: new google.maps.LatLng(14.570275,120.991766)};
+         train[train.length]={station:"LRT-1",sname:"Vito Cruz",traffic:"Heavy",pos: new google.maps.LatLng(14.563268,120.994878)};
+         train[train.length]={station:"LRT-1",sname:"Gil Puyat",traffic:"Heavy",pos: new google.maps.LatLng(14.554192,120.997174)};
+         train[train.length]={station:"LRT-1",sname:"Libertad",traffic:"Heavy",pos: new google.maps.LatLng(14.547691,120.998611)};
+         train[train.length]={station:"LRT-1",sname:"EDSA",traffic:"Heavy",pos: new google.maps.LatLng(14.538947,121.000650)};
+         train[train.length]={station:"LRT-1",sname:"Baclaran",traffic:"Heavy",pos: new google.maps.LatLng(14.534253,120.998440)};
+
+
+         for(i=0;i< train.length;i++){
+           if(train[i].traffic=="Light")
+             $('.t_container table tbody').append("<tr><td>"+train[i].station+"</td>"+"<td>"+train[i].sname+"</td>"+"<td style=\"background-color:green;\">"+train[i].traffic+"</td>"+"</tr>");
+           else if(train[i].traffic=="Medium")
+             $('.t_container table tbody').append("<tr><td>"+train[i].station+"</td>"+"<td>"+train[i].sname+"</td>"+"<td style=\"background-color:orange;\">"+train[i].traffic+"</td>"+"</tr>");
+           else
+             $('.t_container table tbody').append("<tr><td>"+train[i].station+"</td>"+"<td>"+train[i].sname+"</td>"+"<td style=\"background-color:red;\">"+train[i].traffic+"</td>"+"</tr>");
+         addMarker(train[i].pos,train[i].sname);
+         }
+      }
+
+      function addMarker(location,sname) {
+        marker = new google.maps.Marker({
+          position: location,
+          map: map,
+          title: sname
+        });
+      }
+
+
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+  </head>
+  <body>
+
+
+    <div class="container-fluid clean">
+      <!--header-->
+      <div class="row-fluid">
+        <div class='col-md-12 header'>
+        <h1>Header</h1>
+        </div>
+      </div>
+
+      <!--content-->
+      <div class="row-fluid">
+        <!--map-->
+        <div class="col-md-9" style="padding:0px;">
+        <div id="map-canvas">
+        </div>
+      </div>
+        <!--list of all the stations-->
+        <div class="col-md-3" style="padding:0px;">
+          <div class="stations_container">
+            <div class="title">
+              Current Stations Densities
+            </div>
+          <div class="t_container">
+            <table>
+              <tbody>
+
+
+              </tbody>
+            </table>
+
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!--footer-->
+      <div class="row-fluid">
+        <div class='col-md-12 footer'>
+          footer
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+.title_bar{
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-family: odin;
+  font-size: 72px;
+  background: -webkit-linear-gradient(top, #000066 , #000033); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #000066, #000033); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #000066, #000033); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #000066 , #000033); /* Standard syntax (must be last) */
+}
+
+.clean{
+  padding:0px;
+
+  background-color:#CCC;
+}
+
+
+.header{
+
+  background-color:#ffffff;
+}
+
+.footer{
+  left: 0px;
+  background-color:#ffffff;
+}
+.stations_container{
+  background-color:#000000;
+  background-color:#4d51a0;
+  padding:0px;
+  font-family:inherit;
+  min-width:290px;
+  display:table;
+  position: fixed;
+  width: auto;
+  top: 117px;
+  bottom: 98px;
+  overflow: hidden;
+  display: block;
+}
+
+.stations_container .title
+{
+  height:10%;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  font-size:150%;
+  color:white;
+  background: -webkit-linear-gradient(top, #000066 , #000033); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #000066, #000033); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #000066, #000033); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #000066 , #000033); /* Standard syntax (must be last) */
+  font-weight:bold;
+}
+
+.stations_container .t_container
+{
+  height:90%;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  max-height:500px;
+  width:100%;
+  background-color:#4d51a0;
+}
+
+.stations_container .t_container table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+.stations_container .t_container::-webkit-scrollbar{
+  width:10px;
+}
+
+.stations_container .t_container::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.stations_container .t_container::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.stations_container tr,.stations_container td{
+  overflow-x:hidden;
+  text-overflow: ellipsis;
+  text-align:center;
+  color: #AEABAB;
+}
+
+#map-canvas{
+position:relative;
+width:100%;
+height: 100%;
+min-height:550px;
+
+background-color: #CCC;
+}
+
+@media(max-width:1190px){
+  .stations_container .title{
+    font-size:120%;
+  }
+}

@@ -1,0 +1,42 @@
+
+  <div class="container-fluid clean" id="try">
+    <!--Title bar-->
+    <div class="row title_bar">
+      <div class="col-md-12">
+        &nbsp<%=image_tag("sor.png")%>&nbsp
+      </div>
+    </div>
+
+    <!--Content Bar-->
+    <div class="row content_bar">
+      <div class="col-md-8">
+      </div>
+
+      <div class="col-md-3 login_box">
+
+      <%= form_tag("main", method: "get") do %>
+          <h2 class="form-signin-heading">ANNOUNCEMENTS:</h2>
+        <ul>
+          <li class="form-signin-heading">LRT-1 operating normally.</li>
+          <li class="form-signin-heading">LRT-2 operating normally.</li>
+          <li class="form-signin-heading">MRT-3 from Boni southbound will be restored soon.</li>
+        </ul>
+          <%= submit_tag 'Go to site ->', :class => "btn btn-lg btn-primary btn-block" %>
+      <% end %>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12 footer">
+        <p>
+        &nbsp <%=image_tag("twitter.png", size: "35x35")%>&nbsp
+        &nbsp <%=image_tag("fb.png", size: "35x35")%>&nbsp
+            About us</p>
+      </div>
+
+
+  </div>
+      </div>
+    </div>

@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'odin';
+  src:  url('Odin.otf')
+}
+html{
+  background-image:url('train.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  width:100%;
+  height:100%;
+}
+
+body {
+  background: none;
+}
+
+.clean {
+  background:transparent !important;
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  right:0px;
+  left:0px;
+
+
+}
+
+.title_bar{
+  text-align: center;
+  background-color:rgba(0,0,51, 0);
+  color: #ffffff;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-family: odin;
+  font-size: 72px;
+}
+
+.content_bar{
+
+  color: #ffffff;
+  padding: 15px;
+}
+
+.login_box{
+  background-color: rgba(0,0,51,0.5);
+  border-radius: 10px;
+  position:absolute;
+  right:100px;
+  top:35%;
+  font-family: odin;
+}
+
+.login_box form{
+  padding: 15px;
+  font-family: odin;
+}
+
+.email_box{
+    margin-bottom: 5px;
+    font-family: odin;
+}
+
+.sign_up{
+  text-align:center;
+  text-decoration: underline;
+  font-family: odin;
+
+}
+.test{
+  background-color:
+}
+.footer{
+  font-family: odin;
+  font-size: 24px;
+  position: fixed;
+  bottom:0px;
+  width: 100%;
+  margin: 0px;
+  color: #C8C8C8;
+  padding: 25px;
+  background: -webkit-linear-gradient(top, #000066 , #000033); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #000066, #000033); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #000066, #000033); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #000066 , #000033); /* Standard syntax (must be last) */
+}
+
+
+img{
+  cursor: pointer;
+
+}
+
+img:hover{
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+ -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+-moz-box-shadow:    0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+box-shadow:         0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+}
+img:last-of-type:hover{
+    -webkit-border-radius: 1000px;
+    -moz-border-radius: 1000px;
+    border-radius: 1000px;
+ -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+-moz-box-shadow:    0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+box-shadow:         0px 0px 30px 0px rgba(255, 255, 255, 0.67);
+}
